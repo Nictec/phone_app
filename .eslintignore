@@ -1,2 +1,5 @@
 build/*.js
 config/*.js
+src/*.vue
+src/components/pages/*.vue
+src/auth.js

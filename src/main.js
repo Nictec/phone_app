@@ -13,6 +13,9 @@ import Framework7Vue from 'framework7-vue'
 /* eslint-disable no-unused-vars */
 import Framework7Theme from 'framework7/dist/css/framework7.ios.min.css'
 import Framework7ThemeColors from 'framework7/dist/css/framework7.ios.colors.min.css'
+import fontawesome from 'fontawesome'
+import vueResource from 'vue-resource'
+import auth from './auth.js'
 /* OR for Material Theme:
 import Framework7Theme from 'framework7/dist/css/framework7.material.min.css'
 import Framework7ThemeColors from 'framework7/dist/css/framework7.material.colors.min.css'
@@ -28,6 +31,7 @@ import App from './App'
 
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
+Vue.use(vueResource)
 
 /* eslint-disable no-new */
 // Init App
@@ -45,4 +49,10 @@ new Vue({
   components: {
     app: App
   }
+})
+
+Vue.http.options.root = 'http://localhost:8000'
+Vue.http.interceptors.push((request, next) => {
+  request.headers.set('Authorization', auth.getAuthHeader())
+  next()
 })

@@ -1,6 +1,6 @@
 export default [
   {
-    path: '/about/',
-    component: require('./components/pages/about.vue')
+    path: '/clients/',
+    component: require('./components/pages/clients.vue')
   }
 ]
