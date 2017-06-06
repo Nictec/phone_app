@@ -1,6 +1,5 @@
- import Vue from './main.js'
- const LOGIN_URL = "http://localhost:8000/auth/"
- const CURRENT = "http://localhost:8000/current-user"
+  const LOGIN_URL = "http://technick.pythonanywhere.com/auth/"
+ const CURRENT = "http://technick.pythonanywhere.com/current-user/"
 
 export default{
   user: {
